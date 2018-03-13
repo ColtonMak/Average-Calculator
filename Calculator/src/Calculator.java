@@ -3,53 +3,25 @@ import java.util.Scanner;
 public class Calculator {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		String input = sc.next();
+		int intOne = sc.nextInt();
+		char operator = sc.next().charAt(0);
+		int intTwo = sc.nextInt();
 		sc.close();
 				
-		if (input.contains("+") == true) {
-			int index = input.indexOf('+');
-			String substringOne = input.substring(0, index);
-			String substringTwo = input.substring(index+1);
-			System.out.println(output(substringOne, substringTwo, '+'));
+		if (operator == '+') {
+			System.out.println(intOne + intTwo);
 		}
-		else if (input.contains("-") == true) {
-			int index = input.indexOf('-');
-			String substringOne = input.substring(0,index);
-			String substringTwo = input.substring(index+1);
-			System.out.println(output(substringOne, substringTwo, '-'));
+		else if (operator == '-') {
+			System.out.println(intOne - intTwo);
 
 		}
-		else if (input.contains("*") == true) {
-			int index = input.indexOf('*');
-			String substringOne = input.substring(0,index);
-			String substringTwo = input.substring(index+1);
-			System.out.println(output(substringOne, substringTwo, '*'));
+		else if (operator == '*') {
+			System.out.println(intOne * intTwo);
 
 		}
 		else {
-			int index = input.indexOf('/');
-			String substringOne = input.substring(0,index);
-			String substringTwo = input.substring(index+1);
-			System.out.println(output(substringOne, substringTwo, '/'));
+			System.out.println(intOne / intTwo);
 
 		}
 	}
-	
-	public static int output(String str1, String str2, char operator) {
-		int input1 = Integer.parseInt(str1);
-		int input2 = Integer.parseInt(str2);
-		int result = 0;
-		switch (operator) {
-		case '+': result = input1 + input2;
-			break;
-		case '-': result = input1 - input2;
-			break;
-		case '*': result = input1 * input2;
-			break;
-		case '/': result = input1 / input2;
-		}
-		return result;
-	}
-	
-
 }
